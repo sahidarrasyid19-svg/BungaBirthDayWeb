@@ -19,7 +19,7 @@ onload = () => {
     window.addEventListener('touchstart', mainkanLagu, { once: true });
 
     // 📝 2. LOGIKA KETIK TEKS JUDUL
-    const titles = ('HAPPY BIRTHDAY\nBUNGA KUSUMA').split('')
+    const titles = ('HAPPY BIRTHDAY\nBUNGA KUSUMA DEWI').split('')
     const titleElement = document.getElementById('title'); 
     let index = 0;
 
@@ -44,8 +44,28 @@ onload = () => {
         }, 600); // Jeda 0.6 detik setelah nama beres diketik biar smooth
       }
     }
+    // Tambahin ini di baris paling bawah main.js lo
+    function startSubtitle() {
+      const text = "selamat happy birth day ay, semoga makin cantik, sabar, dan sukses terus. Walaupun dunia ini jelek tapi bunga tetep cantik.".split('');
+      const subElement = document.getElementById('subtitle');
+      let i = 0;
+
+      function type() {
+        if (i < text.length) {
+          subElement.innerHTML += text[i];
+          i++;
+          setTimeout(type, 70); // Kecepatan ngetik (80ms)
+        }
+      }
+      type();
+    }
+
+// Panggil fungsi ini tepat setelah fungsi appendTitle selesai (atau panggil pas onload)
+// Kalau mau muncul barengan sama judul, panggil di sini:
+// startSubtitle();
 
     appendTitle();
+    startSubtitle();
     clearTimeout(c);
   }, 1000);
 };
