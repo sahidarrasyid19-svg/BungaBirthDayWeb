@@ -1245,5 +1245,34 @@ body {
     display: block; 
     /* atau bisa juga pakai: opacity: 1; */
 }
-
+.ucapan-tambahan {
+  position: absolute;
+  top: 40%; /* Atur ini biar posisinya pas di bawah judul */
+  left: 0;
+  width: 100%;
+  color: white;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  z-index: 10; /* Biar teksnya ada di depan/aman */
+}
+.subtitle {
+  position: absolute;
+  top: 55%; 
+  left: 0;
+  width: 100%;
+  text-align: center;
+  
+  /* GANTI WARNA DI SINI */
+  color: #ffffff; /* Putih terang biar jelas */
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Ini kuncinya! Shadow hitam biar teks 'keluar' dari latar belakang */
+  
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  z-index: 0; 
+  pointer-events: none;
+  padding: 0 20px;
+}
 /*# sourceMappingURL=style.css.map */
